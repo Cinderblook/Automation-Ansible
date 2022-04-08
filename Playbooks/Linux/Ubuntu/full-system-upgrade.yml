@@ -1,0 +1,11 @@
+---
+- hosts: hostGroup
+  become: true
+  tasks:
+    - name: Update all packages to latest version [apt upgrade]
+      apt:
+        name: "*"
+        state: latest
+    
+    - name: Upgrade OS [apt dist-upgrade]
+      upgrade: dist
